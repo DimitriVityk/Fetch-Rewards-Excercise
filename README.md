@@ -9,12 +9,12 @@ A class to represent list items. There are three fields:
 
 Getter methods are implemented for each field.  
   
-The class implements Comparable<ListItem> so that it can be sorted later. 
-The compareTo method is overriden to compare the names of items.  
-Since each item's name begins with the word "Item" the only factor that decides the order is the integer value after "Item".
-So, I split both strings at the space between "Item" and the number i.e. "123". This gives me an array of size two for each ListItem where the element at index 1 is a string representing an integer value.  
-I make each String into an Integer object using the Integer.valueOf() methods. (actually I use both Integer.valueOf() and Integer.parseInt(), but they both work in this scenario, so I wont change it)   
-finally I use the Integer.compareTo() method to compare the two Integer objects and I return the results.
+- The class implements Comparable<ListItem> so that it can be sorted later. 
+- The compareTo method is overriden to compare the names of items.  
+- Since each item's name begins with the word "Item" the only factor that decides the order is the integer value after "Item".
+- So, I split both strings at the space between "Item" and the number i.e. "123". This gives me an array of size two for each ListItem where the element at index 1 is a string representing an integer value.  
+- I make each String into an Integer object using the Integer.valueOf() methods. (actually I use both Integer.valueOf() and Integer.parseInt(), but they both work in this scenario, so I wont change it)   
+- finally I use the Integer.compareTo() method to compare the two Integer objects and I return the results.
 
 Section
 ------------
