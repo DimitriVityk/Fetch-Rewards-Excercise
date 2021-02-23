@@ -66,7 +66,7 @@ ListDownloader is a class that implements the Runabble interface. In this applic
 - When there is no more data left, the StringBuilder is passed to the process() method.
 - In the process method a TreeMap<Integer, List\<ListItem\>\> is created.
 - The JSON is then parsed using the org.JSON package. First a JSON array is created and then it is iterated through and all of it's elements, JSONObjects, are accessed. If the name of the object is Null or an empty string, the for loop skips to the next JSONObject. Otherwise it stores the Object's id and listId fields and adds them as parameters to a temporary ListItem Object. If an Object with the same listId has already been added to the list, then that listId's corresponding List is accessed, and the temporary ListItem is added to it. Else, A new ListItem list is created, the ListItem is added to it, and a new entry is added to the treeMap with the ListItem's listId being the Key, and the new List being the value.
-- Finally, mainActivity.runOnUiThread() is called and mainActivity.loadItemMap() is passed the treeMap as a parameter (mainActivity.loadItemMap(treemap);)
+- Finally, mainActivity.runOnUiThread() is called because we are trying to update our UI from a non-UI thread, and mainActivity.loadItemMap() is passed the treeMap as a parameter (mainActivity.loadItemMap(treemap);)
 
 Misc.
 -------
